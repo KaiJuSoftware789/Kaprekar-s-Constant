@@ -2,18 +2,22 @@ def main():
 
     KAPREKAR_CONSTANT = 6174
 
-    # Get user input
-    num = int(input("Enter a four digit number with at least two different digits: "))
-    print("\n")
+    while True:
+        # Get user input
+        num = int(input("Enter a four digit number with at least two different digits: "))
+        print("\n")
 
-    # Valid input checks
-    if num < 1000 or num > 9999:
-        print("Please enter a four digit number.")
-        return
+        # Input checks
+        if num < 1000 or num > 9999:
+            print("Please enter a four digit number.")
+            continue
 
-    if len(set(str(num))) < 2:
-        print("Please enter a number with at least two different digits.")
-        return
+        if len(set(str(num))) < 2:
+            print("Please enter a number with at least two different digits.")
+            continue
+
+        # Break loop if input is valid
+        break
 
     # Perform Kaprekar's routine
     steps = 0
